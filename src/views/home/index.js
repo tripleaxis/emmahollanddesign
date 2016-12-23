@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import LoginButton from './login-button';
+import LoginButton from './components/login-button';
 import ItemList from '../items/itemList';
 import './Home.css';
 
