@@ -1,8 +1,10 @@
-import * as ActionTypes from './action-types';
+export const ActionTypes = {
+	UPDATE: 'Auth::Update'
+};
 
-export function initAuth(user) {
+export const updateAuth = (user) => {
 	return {
-		type: ActionTypes.INIT_AUTH,
+		type: ActionTypes.UPDATE,
 		payload: user
-	};
-}
+	}
+};

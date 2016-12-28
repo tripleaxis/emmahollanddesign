@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import store from './core/store';
 
 // Initialisation
-import { initAuth } from './core/auth';
 import { fetchItems } from './core/items';
 import { getCache } from './core/cache';
 
 // Views:
 import HomeView from './views/home';
 import ImageView from './views/image';
+import AdminView from './views/admin';
 
 function render (mountPoint) {
 	ReactDOM.render(
@@ -20,6 +20,7 @@ function render (mountPoint) {
 				<Route path="/" component={HomeView}>
 					<Route path="/image/:image" component={ImageView}/>
 				</Route>
+				<Route path="/admin" component={AdminView}/>
 			</Router>
 		</Provider>,
 		mountPoint
@@ -28,10 +29,8 @@ function render (mountPoint) {
 
 export default {
 	run: (el) => {
+		console.log('initialItems:', store.getState().items);
 		
-		console.log('initialState:', store.getState());
-		
-		initAuth();
 		if (!getCache().items) {
 			fetchItems();
 		}

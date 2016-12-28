@@ -7,7 +7,7 @@ let cache;
 /**
  * Check if local cached data has expired
  */
-const hasExpired = (data = {}) => {
+const hasExpired = (data) => {
 	return Date.now() > data.expiry;
 };
 
@@ -38,7 +38,7 @@ export const getCache = () => {
 	}
 	
 	// check cache hasn't expired
-	if(hasExpired(cache)) {
+	if(hasExpired(cache || {})) {
 		cache = {};
 	}
 	

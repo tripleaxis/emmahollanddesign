@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import LoginButton from './components/login-button';
 import ItemList from '../items/itemList';
 import './Home.css';
 
 class Home extends Component {
 	
-	getUserControl () {
-		if(!this.props.user.loaded) {
-			return false;
-		}
-		
-		return this.props.user.authenticated ?
-			<LoginButton/> :
-			<div><p>{this.props.user.displayName}</p></div>;
-	}
+	static propTypes = {
+		items: PropTypes.arrayOf(PropTypes.object)
+	};
 	
 	render () {
 		let { items } = this.props;
 		
 		return (
 			<div className="Home">
-				{ this.getUserControl() }
 				<ItemList items={items}/>
 			</div>
 		);
@@ -30,7 +22,8 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-	return Object.assign({}, state);
+	const { items } = state;
+	return { items };
 };
 
 export default connect(mapStateToProps)(Home);
