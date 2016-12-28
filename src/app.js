@@ -7,6 +7,7 @@ import store from './core/store';
 // Initialisation
 import { initAuth } from './core/auth';
 import { fetchItems } from './core/items';
+import { getCache } from './core/cache';
 
 // Views:
 import HomeView from './views/home';
@@ -27,10 +28,13 @@ function render (mountPoint) {
 
 export default {
 	run: (el) => {
-		Promise.all([
-			initAuth(),
-			fetchItems()
-		]);
+		
+		console.log('initialState:', store.getState());
+		
+		initAuth();
+		if (!getCache().items) {
+			fetchItems();
+		}
 		
 		render(el);
 	}
