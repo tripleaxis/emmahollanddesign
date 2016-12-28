@@ -11,7 +11,7 @@ export default class ItemList extends Component {
 	render() {
 		return (
 			<div className="item-list">
-				<h1>Item List</h1>
+				<h1>Artwork</h1>
 				<ul>
 				{
 					this.props.items.map((item, idx) => (
