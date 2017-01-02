@@ -5,19 +5,20 @@ import './items.css';
 export default class ItemList extends Component {
 	
 	static propTypes = {
-		items: PropTypes.array
+		items: PropTypes.arrayOf(PropTypes.object).isRequired
 	};
 	
 	render () {
 		return (
-			<div className="item-list">
-				<h1>Artwork</h1>
-				<ul>{
+			<ul className="item-list">
+				{
 					this.props.items.map((item, idx) => (
-						<Item data={item} key={idx}/>
+						<li key={idx}>
+							<Item data={item}/>
+						</li>
 					))
-				}</ul>
-			</div>
+				}
+			</ul>
 		);
 	}
 }

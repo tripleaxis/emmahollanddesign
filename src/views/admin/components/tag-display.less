@@ -1,0 +1,50 @@
+@import "../../../vars";
+
+@font-color: #C3C3C3;
+@font-color-selected: #121212;
+@tick-color: #DDDDDD;
+@tick-color-selected: #008000;
+@border-color-selected: #288A8A;
+
+.tag-display {
+	display: inline-block;
+	padding: 0;
+	vertical-align: top;
+
+	> li {
+		display: inline-block;
+		list-style: none;
+		.standard-border();
+		background-color: #F5F5F5;
+
+		padding: 0;
+		margin-right: 4px;
+
+		font-size: 0.8rem;
+		line-height: 1.6;
+		color: @font-color;
+
+		> span {
+			padding: 0 5px;
+			user-select: none;
+			cursor: pointer;
+		}
+
+		&.selected {
+			background-color: #C2E3FF;
+			border-color: @border-color-selected;
+			color: @font-color-selected;
+
+			.remove-icon {
+				color: @tick-color-selected;
+			}
+		}
+	}
+
+	.remove-icon {
+		display: inline-block;
+
+		border: 0 0 0 1px solid @default-border-color;
+		color: @tick-color;
+	}
+}

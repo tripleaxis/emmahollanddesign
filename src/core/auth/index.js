@@ -7,6 +7,7 @@ export { reducer as authReducer } from './reducer';
 
 // Firebase authentication state handler
 auth.onAuthStateChanged((user) => {
+	console.log('onAuthStateChanged()', 'logged in:', !!user);
 	store.dispatch(Actions.updateAuth(user || {}));
 });
 

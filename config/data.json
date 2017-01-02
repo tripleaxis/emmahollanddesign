@@ -1,117 +1,95 @@
 {
+	"users": {
+		"Li0iytrRseNOk45BHbWfSfCZJIF3": {
+			"isAdmin": true
+		}
+	},
 	"artwork": {
-		"timestamp": "1482880341059",
+		"timestamp": 1482880341059,
 		"items": [
 			{
-				"id": "disney1",
-				"created": "1482880341059",
-				"tags": [
-					"disney",
-					"spotlight"
-				],
+				"id": 1,
+				"created": 1482880341059,
+				"tags": "disney, spotlight",
 				"title": "Disney 1",
 				"image": "/images/artwork/DISNEY-1.jpg",
 				"thumbnail": "/images/artwork/DISNEY-1.thumb.jpg"
 			},
 			{
-				"id": "disney2",
-				"created": "1482880341059",
-				"tags": [
-					"disney",
-					"spotlight"
-				],
+				"id": 2,
+				"created": 1482880341059,
+				"tags": "disney, spotlight",
 				"title": "Disney 2",
 				"image": "/images/artwork/DISNEY-2.jpg",
 				"thumbnail": "/images/artwork/DISNEY-2.thumb.jpg"
 			},
 			{
-				"id": "disney3",
-				"created": "1482880341059",
-				"tags": [
-					"disney",
-					"spotlight"
-				],
+				"id": 3,
+				"created": 1482880341059,
+				"tags": "disney, spotlight",
 				"title": "Disney 3",
 				"image": "/images/artwork/DISNEY-3.jpg",
 				"thumbnail": "/images/artwork/DISNEY-3.thumb.jpg"
 			},
 			{
-				"id": "disney4",
-				"created": "1482880341059",
-				"tags": [
-					"disney",
-					"spotlight"
-				],
+				"id": 4,
+				"created": 1482880341059,
+				"tags": "disney, spotlight",
 				"title": "Disney 4",
 				"image": "/images/artwork/DISNEY-4.jpg",
 				"thumbnail": "/images/artwork/DISNEY-4.thumb.jpg"
 			},
 			{
-				"id": "disney5",
-				"created": "1482880341059",
-				"tags": [
-					"disney",
-					"spotlight"
-				],
+				"id": 5,
+				"created": 1482880341059,
+				"tags": "disney, spotlight",
 				"title": "Disney 5",
 				"image": "/images/artwork/DISNEY-5.jpg",
 				"thumbnail": "/images/artwork/DISNEY-5.thumb.jpg"
 			},
 			{
-				"id": "kmart1",
-				"created": "1482880341059",
-				"tags": [
-					"kmart",
-					"spotlight"
-				],
+				"id": 6,
+				"created": 1482880341059,
+				"tags": "kmart, spotlight",
 				"title": "K-Mart 1",
 				"image": "/images/artwork/KMART-1.jpg",
 				"thumbnail": "/images/artwork/KMART-1.thumb.jpg"
 			},
 			{
-				"id": "kmart2",
-				"created": "1482880341059",
-				"tags": [
-					"kmart",
-					"spotlight"
-				],
+				"id": 7,
+				"created": 1482880341059,
+				"tags": "kmart, spotlight",
 				"title": "K-Mart 2",
 				"image": "/images/artwork/KMART-2.jpg",
 				"thumbnail": "/images/artwork/KMART-2.thumb.jpg"
 			},
 			{
-				"id": "kmart3",
-				"created": "1482880341059",
-				"tags": [
-					"kmart",
-					"spotlight"
-				],
+				"id": 8,
+				"created": 1482880341059,
+				"tags": "kmart, spotlight",
 				"title": "K-Mart 3",
 				"image": "/images/artwork/KMART-3.jpg",
 				"thumbnail": "/images/artwork/KMART-3.thumb.jpg"
 			},
 			{
-				"id": "kmart4",
-				"created": "1482880341059",
-				"tags": [
-					"kmart",
-					"spotlight"
-				],
+				"id": 9,
+				"created": 1482880341059,
+				"tags": "kmart, spotlight",
 				"title": "K-Mart 4",
 				"image": "/images/artwork/KMART-4.jpg",
 				"thumbnail": "/images/artwork/KMART-4.thumb.jpg"
 			},
 			{
-				"id": "kmart5",
-				"created": "1482880341059",
-				"tags": [
-					"kmart",
-					"spotlight"
-				],
+				"id": 10,
+				"created": 1482880341059,
+				"tags": "kmart, spotlight",
 				"title": "K-Mart 5",
 				"image": "/images/artwork/KMART-5.jpg",
 				"thumbnail": "/images/artwork/KMART-5.thumb.jpg"
 			}
 		]
-	}
+	},
+	"tags": [
+		"kmart", "disney", "spotlight"
+	]
 }

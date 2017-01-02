@@ -7,7 +7,7 @@ import './Home.css';
 class Home extends Component {
 	
 	static propTypes = {
-		items: PropTypes.arrayOf(PropTypes.object)
+		items: PropTypes.arrayOf(PropTypes.object).isRequired
 	};
 	
 	render () {
@@ -15,6 +15,7 @@ class Home extends Component {
 		
 		return (
 			<div className="Home">
+				<h1>Artwork</h1>
 				<ItemList items={items}/>
 			</div>
 		);

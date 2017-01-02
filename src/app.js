@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './core/store';
 
 // Initialisation
-import { fetchItems } from './core/items';
+import { fetchInitialData } from './core/data';
 import { getCache } from './core/cache';
 
 // Views:
@@ -31,8 +31,9 @@ export default {
 	run: (el) => {
 		console.log('initialItems:', store.getState().items);
 		
-		if (!getCache().items) {
-			fetchItems();
+		const cache = getCache();
+		if (!cache.items || !cache.tags) {
+			fetchInitialData();
 		}
 		
 		render(el);

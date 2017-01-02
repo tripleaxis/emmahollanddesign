@@ -1,4 +1,4 @@
-import { ActionTypes } from '../items';
+import { ActionTypes } from '../data';
 
 const KEY = 'local-data';
 const LIFESPAN = 1000 * 60 * 30;
@@ -68,14 +68,22 @@ export const setCache = (name, data) => {
 /**
  * Hook for redux to drop specific data to local-cache
  */
-export const reduxEnhancer = ({ getState }) => {
+export const saveLocalCache = ({ getState }) => {
 	return (next) => (action) => {
 		const state = next(action);
 		
 		if (isSupported) {
+			let newState = getState().computedStates.slice(-1).pop().state;
+			
 			switch (state.action.type) {
-				case ActionTypes.INIT_ITEMS:
-					setCache('items', state.action.payload);
+				case ActionTypes.Items.INIT:
+				case ActionTypes.Items.UPDATE:
+					setCache('items', newState.items);
+					break;
+					
+				case ActionTypes.Tags.INIT:
+				case ActionTypes.Tags.ADD:
+					setCache('tags', newState.tags);
 					break;
 				
 				default:

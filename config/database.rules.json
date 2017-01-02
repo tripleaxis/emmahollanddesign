@@ -6,8 +6,13 @@
 				".write": "$uid === auth.uid"
 			}
 		},
-		"items": {
-			".read": true
-		}
+		"artwork": {
+			".read": true,
+			".write": "auth != null && root.child('users/' + auth.uid + '/isAdmin').val() === true"
+		},
+		"tags": {
+			".read": true,
+			".write": "auth != null && root.child('users/' + auth.uid + '/isAdmin').val() === true"
+		},
 	}
 }

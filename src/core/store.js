@@ -1,13 +1,15 @@
 import { compose, createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
-import { reduxEnhancer, getCache } from './cache';
+import { saveLocalCache, getCache } from './cache';
+import { updateDatabase } from './firebase';
 
 const initialState = getCache();
 
 // Setup redux middleware to add devTools profiling and localStorage caching
 let enhancer = compose(
 	window.devToolsExtension && window.devToolsExtension(),
-	applyMiddleware(reduxEnhancer)
+	applyMiddleware(saveLocalCache),
+	applyMiddleware(updateDatabase)
 );
 
 // Define data store

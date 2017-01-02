@@ -1,12 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import LoginButton from '../admin/components/login-button';
+import LoginButton from './components/login-button';
+import AuthenticatedView from './authenticated';
+import './admin.css';
 
 class AdminView extends Component {
 	
 	static propTypes = {
-		user: PropTypes.object
+		user: PropTypes.object.isRequired,
+		items: PropTypes.arrayOf(PropTypes.object).isRequired,
+		tags: PropTypes.arrayOf(PropTypes.string)
 	};
 	
 	render () {
@@ -14,15 +18,17 @@ class AdminView extends Component {
 		
 		return (
 			<div className="Admin">
+				<h1>Admin Section</h1>
 				{ loaded && !authenticated && <LoginButton/> }
+				{ authenticated && <AuthenticatedView {...this.props}/> }
 			</div>
 		);
 	}
 }
 
 const mapStateToProps = (state) => {
-	const { user } = state;
-	return { user };
+	const { user, items, tags } = state;
+	return { user, items, tags };
 };
 
 export default connect(mapStateToProps)(AdminView);
