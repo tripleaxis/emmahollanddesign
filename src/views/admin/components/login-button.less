@@ -1,12 +1,11 @@
+@import '../../../vars';
 
 #loginButton {
+	@border-color: @default-border-color;
 	padding: 5px 10px;
-	border-radius: 3px;
-	border: 1px solid rgba(0, 0, 0, 0.1);
 	background: #EFEFEF;
-	cursor: pointer;
+	.standard-border(@border-color);
+	.standard-border-hover(@border-color);
 
-	&:hover {
-		border-color: rgba(0, 0, 0, 0.2);
-	}
+	cursor: pointer;
 }

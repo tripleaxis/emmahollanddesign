@@ -1,0 +1,13 @@
+@default-border-color: #D4D4D4;
+@default-border-radius: 4px;
+
+.standard-border(@color: @default-border-color) {
+	border: 1px solid @color;
+	border-radius: @default-border-radius;
+}
+
+.standard-border-hover(@color: @default-border-color) {
+	&:hover {
+		border-color: darken(@color, 20%);
+	}
+}

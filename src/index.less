@@ -1,7 +1,9 @@
+@import "vars";
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 }
 
 *:focus {
@@ -18,4 +20,26 @@ body {
 
 h1 {
 	margin: 0;
+}
+
+button {
+	@border-color: #D4D4D4;
+
+	padding: 10px;
+	background-color: #F4F4F4;
+	.standard-border(@border-color);
+	.standard-border-hover(@border-color);
+
+	font-size: 0.8rem;
+	color: #121212;
+
+	&.green {
+		@border-color: #81D281;
+
+		background-color: #BBEEB8;
+		border-color: @border-color;
+		color: #121212;
+
+		.standard-border-hover(@border-color);
+	}
 }
