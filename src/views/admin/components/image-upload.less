@@ -1,0 +1,42 @@
+@import "../../../vars";
+
+.image-upload {
+
+	input[type="file"] {
+		display: none;
+	}
+
+	.saveDialog, .errorDialog {
+		position: absolute;
+		left: 50%;
+		top: 70px;
+		margin-left: -75px;
+
+		padding: 10px 12px;
+		.standard-border();
+		background-color: #FEFEFE;
+		text-align: center;
+		box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+		z-index: 100;
+
+		h4 {
+			margin: 0 0 10px 0;
+		}
+
+		button {
+			margin-right: 5px;
+		}
+
+		p {
+			margin: 0 0 10px 0;
+			font-size: 0.9rem;
+		}
+	}
+
+	.errorDialog {
+		width: 280px;
+		top: 50px;
+		margin-left: -140px;
+	}
+
+}

@@ -15,6 +15,7 @@
 		display: inline-block;
 		list-style: none;
 		.standard-border();
+		.standard-border-hover();
 		background-color: #F5F5F5;
 
 		padding: 0;
@@ -35,13 +36,15 @@
 			border-color: @border-color-selected;
 			color: @font-color-selected;
 
+			.standard-border-hover(@border-color-selected);
+
 			.remove-icon {
 				color: @tick-color-selected;
 			}
 		}
 	}
 
-	.remove-icon {
+	.selected-icon {
 		display: inline-block;
 
 		border: 0 0 0 1px solid @default-border-color;

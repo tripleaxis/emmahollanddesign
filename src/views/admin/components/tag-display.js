@@ -33,7 +33,7 @@ class TagDisplay extends Component {
 						return (
 							<li key={idx} className={`tag ${selected}`} onClick={this.toggleSelected.bind(this, tag)}>
 								<span>{tag}</span>
-								<span className="remove-icon">✔</span>
+								{/*<span className="selected-icon">✔</span>*/}
 							</li>
 						);
 					})

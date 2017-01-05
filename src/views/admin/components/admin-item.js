@@ -5,22 +5,18 @@ import { updateItem } from '../../../core/data/actions';
 import store from '../../../core/store';
 import 'react-datepicker/dist/react-datepicker.min.css';
 import TagDisplay from './tag-display';
+import ImageUpload from './image-upload';
 
 export default class AdminItem extends Component {
 	
 	state = {
-		title: this.props.data.title,
-		created: this.props.data.created,
-		tags: this.props.data.tags
+		thumbnail: this.props.data.thumbnail,
+		showSaveDialog: false
 	};
 	
 	static propTypes = {
 		data: PropTypes.object.isRequired
 	};
-	
-	formatDate (d) {
-		return new Date(d).toLocaleDateString();
-	}
 	
 	updateTitle = (evt) => {
 		console.log(`save title: '${evt.target.value}'`);
@@ -46,13 +42,38 @@ export default class AdminItem extends Component {
 		store.dispatch(updateItem(item));
 	};
 	
+	updateThumbnail = (newImage) => {
+		this.refs.infoBlock.classList.toggle('blur', !!newImage);
+		if (newImage) {
+			this.setState({
+				thumbnail: newImage
+			});
+		}
+	};
+	
+	resetThumbnail = () => {
+		this.refs.infoBlock.classList.remove('blur');
+		this.setState({
+			thumbnail: this.props.data.thumbnail
+		});
+	};
+	
+	saveThumbnail = (response) => {
+		console.log('saveThumbnail()', response);
+		this.refs.infoBlock.classList.remove('blur');
+		
+		let item = this.props.data;
+		item.thumbnail = response.path;
+		store.dispatch(updateItem(item));
+	};
+	
 	render () {
-		let { thumbnail, title, created, tags } = this.props.data;
+		let { title, created, tags } = this.props.data;
 		
 		return (
 			<div className="admin-item">
-				<img src={thumbnail} alt={title}/>
-				<div className="admin-item-info">
+				<img src={this.state.thumbnail} alt={title}/>
+				<div className="admin-item-info" ref="infoBlock">
 					<div className="row">
 						<label>Title: </label>
 						<input type="text" name="title" value={title}
@@ -68,6 +89,12 @@ export default class AdminItem extends Component {
 					<div className="row">
 						<label>Tags: </label>
 						<TagDisplay selectedTags={tags} onChange={this.updateTags}/>
+					</div>
+					<div className="row">
+						<ImageUpload onChange={this.updateThumbnail}
+						             onSuccess={this.saveThumbnail}
+						             onFail={this.resetThumbnail}
+						             onCancel={this.resetThumbnail}/>
 					</div>
 				</div>
 			</div>
