@@ -9,17 +9,19 @@ import { fetchInitialData } from './core/data';
 import { getCache } from './core/cache';
 
 // Views:
+import HoldingView from './views/holding';
 import HomeView from './views/home';
 import ImageView from './views/image';
 import AdminView from './views/admin';
 
-function render (mountPoint) {
+
+function render(mountPoint) {
 	ReactDOM.render(
 		<Provider store={store}>
 			<Router history={hashHistory}>
-				<Route path="/" component={HomeView}>
-					<Route path="/image/:image" component={ImageView}/>
-				</Route>
+				<Route path="/" component={HoldingView}/>
+				<Route path="/home" component={HomeView}/>
+				<Route path="/image/:image" component={ImageView}/>
 				<Route path="/admin" component={AdminView}/>
 			</Router>
 		</Provider>,
