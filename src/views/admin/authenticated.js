@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-
+import store from '../../core/store';
+import { addItem } from '../../core/data/actions';
 import AdminItemList from './components/admin-item-list';
 
 export default class Authenticated extends Component {
@@ -21,7 +22,8 @@ export default class Authenticated extends Component {
 	};
 	
 	addItem = () => {
-		alert('add new item');
+		const nextId = this.props.items.reduce((id, item) => Math.max(id, item.id), 0) + 1;
+		store.dispatch(addItem(nextId));
 	};
 	
 	render () {

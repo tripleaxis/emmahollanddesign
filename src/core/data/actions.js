@@ -25,6 +25,20 @@ export function updateItem (item) {
 	};
 }
 
+export function addItem (id) {
+	return {
+		type: ActionTypes.Items.ADD,
+		payload: {
+			id,
+			created: Date.now(),
+			tags: '',
+			title: 'untitled',
+			image: undefined,
+			thumbnail: undefined
+		}
+	};
+}
+
 // ------------- TAG ACTIONS ------------ //
 export function initTags (tags) {
 	return {

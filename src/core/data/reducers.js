@@ -17,10 +17,20 @@ export function itemReducer (state = DEFAULT_ITEMS, { type, payload }) {
 			if (idx === -1) {
 				return state;
 			}
+			
 			// replace item in array and return new state
 			let newState = state.slice();
 			newState[idx] = Object.assign({}, payload);
 			return newState;
+		
+		case ActionTypes.Items.ADD:
+			// only update if new item's id is unique
+			if (state.some((item) => item.id === payload.id)) {
+				return state;
+			}
+			
+			// add new item and return state
+			return state.concat(payload);
 		
 		default:
 			return state;
@@ -31,19 +41,19 @@ export function itemReducer (state = DEFAULT_ITEMS, { type, payload }) {
  * Reducer for Tags
  */
 export function tagReducer (state = DEFAULT_TAGS, { type, payload }) {
-	switch(type) {
+	switch (type) {
 		case ActionTypes.Tags.INIT:
 			return payload;
-			
+		
 		case ActionTypes.Tags.ADD:
 			let newState = state.slice();
 			
 			// only add if not already in collection
-			if(newState.includes(payload)) {
+			if (newState.includes(payload)) {
 				newState.push(payload);
 			}
 			return newState;
-			
+		
 		default:
 			return state;
 	}

@@ -77,6 +77,7 @@ export const saveLocalCache = ({ getState }) => {
 			
 			switch (state.action.type) {
 				case ActionTypes.Items.INIT:
+				case ActionTypes.Items.ADD:
 				case ActionTypes.Items.UPDATE:
 					setCache('items', newState.items);
 					break;
