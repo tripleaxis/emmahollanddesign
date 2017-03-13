@@ -7,47 +7,47 @@
 @border-color-selected: #288A8A;
 
 .tag-display {
-	display: inline-block;
-	padding: 0;
-	vertical-align: top;
+  display: inline-block;
+  padding: 0;
+  vertical-align: top;
 
-	> li {
-		display: inline-block;
-		list-style: none;
-		.standard-border();
-		.standard-border-hover();
-		background-color: #F5F5F5;
+  > li {
+    display: inline-block;
+    list-style: none;
+    .standard-border();
+    .standard-border-hover();
+    background-color: #F5F5F5;
 
-		padding: 0;
-		margin-right: 4px;
+    padding: 0;
+    margin-right: 4px;
 
-		font-size: 0.8rem;
-		line-height: 1.6;
-		color: @font-color;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: @font-color;
 
-		> span {
-			padding: 0 5px;
-			user-select: none;
-			cursor: pointer;
-		}
+    > span {
+      padding: 0 5px;
+      user-select: none;
+      cursor: pointer;
+    }
 
-		&.selected {
-			background-color: #C2E3FF;
-			border-color: @border-color-selected;
-			color: @font-color-selected;
+    &.selected {
+      background-color: #C2E3FF;
+      border-color: @border-color-selected;
+      color: @font-color-selected;
 
-			.standard-border-hover(@border-color-selected);
+      .standard-border-hover(@border-color-selected);
 
-			.remove-icon {
-				color: @tick-color-selected;
-			}
-		}
-	}
+      .remove-icon {
+        color: @tick-color-selected;
+      }
+    }
+  }
 
-	.selected-icon {
-		display: inline-block;
+  .selected-icon {
+    display: inline-block;
 
-		border: 0 0 0 1px solid @default-border-color;
-		color: @tick-color;
-	}
+    border: 0 0 0 1px solid @default-border-color;
+    color: @tick-color;
+  }
 }

@@ -7,9 +7,9 @@ const initialState = getCache();
 
 // Setup redux middleware to add devTools profiling and localStorage caching
 let enhancer = compose(
-	window.devToolsExtension && window.devToolsExtension(),
-	applyMiddleware(saveLocalCache),
-	applyMiddleware(updateDatabase)
+  window.devToolsExtension && window.devToolsExtension(),
+  applyMiddleware(saveLocalCache),
+  applyMiddleware(updateDatabase)
 );
 
 // Define data store

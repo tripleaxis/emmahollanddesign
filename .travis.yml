@@ -2,15 +2,15 @@
 language: node_js
 
 # perform build tasks
-#script:
-#  - npm run lint
-#  - npm test
-#  - npm run build
+script:
+  - npm run lint
+  - npm test
+  - npm run build
 
 # speed up builds by caching node modules
-#cache:
-#  directories:
-#    - node_modules
+cache:
+  directories:
+    - node_modules
 
 # deploy to S3
 #deploy:

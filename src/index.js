@@ -3,8 +3,9 @@ import 'babel-polyfill'
 import 'whatwg-fetch';
 
 import App from './app';
-import './index.css';
+import './index.less';
 
 App.run(
-	document.querySelector('#app')
+  document.querySelector('#app')
 );
+
