@@ -1,10 +1,10 @@
 import React from 'react';
-import './holding.css';
+import './holding.less';
 
 export default () => {
-	return (
-		<section className="holding">
-			<p>Currently undergoing face-lift..</p>
-		</section>
-	);
+  return (
+    <section className="holding">
+      <p>Currently undergoing face-lift..</p>
+    </section>
+  );
 };

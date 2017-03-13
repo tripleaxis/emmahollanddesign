@@ -1,78 +1,78 @@
 @import "vars";
 
 .defaultFont {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 
-	background: #121212;
-	color: #EFEFEF;
-	font-size: 14px;
+  background: #121212;
+  color: #EFEFEF;
+  font-size: 14px;
 
-	.defaultFont;
+  .defaultFont;
 }
 
 *:focus {
-	outline: none;
+  outline: none;
 }
 
 *:disabled {
-	cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .container {
-	height: 100%;
-	padding: 10px;
+  height: 100%;
+  padding: 10px;
 }
 
 #app {
-	height: 100%;
+  height: 100%;
 }
 
 h1 {
-	margin: 0;
+  margin: 0;
 }
 
 button {
-	@border-color: #D4D4D4;
+  @border-color: #D4D4D4;
 
-	min-width: 60px;
-	padding: 10px;
-	background-color: #F4F4F4;
-	.standard-border(@border-color);
-	.standard-border-hover(@border-color);
+  min-width: 60px;
+  padding: 10px;
+  background-color: #F4F4F4;
+  .standard-border(@border-color);
+  .standard-border-hover(@border-color);
 
-	font-size: 0.8rem;
-	color: #121212;
-	text-shadow: 0px 1px 1px #FFFFFF;
+  font-size: 0.8rem;
+  color: #121212;
+  text-shadow: 0px 1px 1px #FFFFFF;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	&.green {
-		@border-color: #81D281;
+  &.green {
+    @border-color: #81D281;
 
-		background-color: #BBEEB8;
-		border-color: @border-color;
-		color: #121212;
+    background-color: #BBEEB8;
+    border-color: @border-color;
+    color: #121212;
 
-		.standard-border-hover(@border-color);
-	}
+    .standard-border-hover(@border-color);
+  }
 
-	&.red {
-		@border-color: #D4A5A7;
+  &.red {
+    @border-color: #D4A5A7;
 
-		background-color: #FBE0DF;
-		border-color: @border-color;
-		color: #121212;
+    background-color: #FBE0DF;
+    border-color: @border-color;
+    color: #121212;
 
-		.standard-border-hover(@border-color);
-	}
+    .standard-border-hover(@border-color);
+  }
 }
 
 .hidden {
-	display: none !important;
+  display: none !important;
 }

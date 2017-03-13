@@ -4,7 +4,7 @@ import { itemReducer } from './data';
 import { tagReducer } from './data';
 
 export default combineReducers({
-	user: authReducer,
-	items: itemReducer,
-	tags: tagReducer
+  user: authReducer,
+  items: itemReducer,
+  tags: tagReducer
 });

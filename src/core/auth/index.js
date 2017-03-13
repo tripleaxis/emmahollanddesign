@@ -7,14 +7,14 @@ export { reducer as authReducer } from './reducer';
 
 // Firebase authentication state handler
 auth.onAuthStateChanged((user) => {
-	console.log('onAuthStateChanged()', 'logged in:', !!user);
-	store.dispatch(Actions.updateAuth(user || {}));
+  console.log('onAuthStateChanged()', 'logged in:', !!user);
+  store.dispatch(Actions.updateAuth(user || {}));
 });
 
-export function signInWithGoogle () {
-	let provider = new GoogleAuthProvider();
-	provider.addScope('profile');
-	provider.addScope('email');
-	
-	return auth.signInWithPopup(provider);
+export function signInWithGoogle() {
+  let provider = new GoogleAuthProvider();
+  provider.addScope('profile');
+  provider.addScope('email');
+  
+  return auth.signInWithPopup(provider);
 }
