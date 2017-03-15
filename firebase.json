@@ -2,15 +2,16 @@
   "database": {
     "rules": "config/database.rules.json"
   },
-	"storage": {
-		"rules": "config/storage.rules.json"
-	},
+  "storage": {
+    "rules": "config/storage.rules"
+  },
   "hosting": {
     "public": "public",
-		"ignore": [
-			"config/*",
-			"firebase.json"
-		],
+    "ignore": [
+      "config/*",
+      "reports/*",
+      "firebase.json"
+    ],
     "rewrites": [
       {
         "source": "**",

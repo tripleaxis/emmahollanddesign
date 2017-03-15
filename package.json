@@ -13,16 +13,6 @@
     "build": "webpack --env PROD --optimize-minimize",
     "serve": "webpack-dev-server --env DEV"
   },
-  "nyc": {
-    "exclude": [
-      "test/**/*.js"
-    ],
-    "reporter": [
-      "html",
-      "text"
-    ],
-    "report-dir": "public/reports/jasmine"
-  },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-eslint": "^7.1.1",

@@ -9,7 +9,7 @@ coverage
 # production
 .nyc_output
 public/bundle.js
-public/reports
+reports
 
 # misc
 .DS_Store

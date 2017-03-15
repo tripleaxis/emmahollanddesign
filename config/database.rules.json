@@ -1,18 +1,18 @@
 {
-	"rules": {
-		"users": {
-			"$uid": {
-				".read": "$uid === auth.uid",
-				".write": "$uid === auth.uid"
-			}
-		},
-		"artwork": {
-			".read": true,
-			".write": "auth != null && root.child('users/' + auth.uid + '/isAdmin').val() === true"
-		},
-		"tags": {
-			".read": true,
-			".write": "auth != null && root.child('users/' + auth.uid + '/isAdmin').val() === true"
-		},
-	}
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "artwork": {
+      ".read": true,
+      ".write": "auth != null && root.child('users/' + auth.uid + '/isAdmin').val() === true"
+    },
+    "tags": {
+      ".read": true,
+      ".write": "auth != null && root.child('users/' + auth.uid + '/isAdmin').val() === true"
+    }
+  }
 }
