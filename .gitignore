@@ -17,3 +17,4 @@ reports
 .idea
 npm-debug.log
 *.css
+.coverage

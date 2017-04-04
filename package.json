@@ -5,17 +5,38 @@
   "author": "Kim Holland <kim@kimmr.com>",
   "license": "ISC",
   "engines": {
-    "node": "6.9.0"
+    "node": "6.10.0"
   },
   "scripts": {
     "test": "nyc node ./test/exec.js",
+    "jest": "jest",
     "lint": "eslint --fix \"{src,test}/**/*.js\"",
     "build": "webpack --env PROD --optimize-minimize",
-    "serve": "webpack-dev-server --env DEV"
+    "serve": "webpack-dev-server --env DEV",
+    "deploy": "firebase deploy"
+  },
+  "jest": {
+    "clearMocks": true,
+    "resetModules": true,
+    "collectCoverage": true,
+    "coverageDirectory": ".coverage",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/mocks/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/test/mocks/styleMock.js"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    }
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-eslint": "^7.1.1",
+    "babel-jest": "^19.0.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-istanbul": "^3.1.2",
     "babel-plugin-transform-class-properties": "^6.22.0",
@@ -32,6 +53,7 @@
     "firebase": "^3.4.1",
     "jasmine": "^2.5.3",
     "jasmine-spec-reporter": "^3.2.0",
+    "jest": "^19.0.2",
     "json-loader": "^0.5.4",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",

@@ -12,15 +12,6 @@ cache:
   directories:
     - node_modules
 
-# deploy to S3
-#deploy:
-#  provider: s3
-#  access_key_id: "xxx"
-#  secret_access_key: "xxx"
-#  bucket: "emmahollanddesign.com"
-#  skip_cleanup: true
-#  region: "Oregon"
-
 # turn off email notifications
 notifications:
   email: false

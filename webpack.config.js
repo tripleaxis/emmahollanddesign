@@ -1,5 +1,9 @@
 let idx = process.argv.findIndex((v) => v === '--env');
-const ENV = idx >= 0 ? process.argv[idx+1] : 'DEV';
+const ENV = idx >= 0 ? process.argv[idx + 1] : 'DEV';
+
+if (ENV === 'PROD') {
+  process.env.NODE_ENV = 'production';
+}
 
 const config = {
   entry: './src/index.js',
