@@ -8,11 +8,11 @@
     "node": "6.10.0"
   },
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "nyc node ./test/exec.js",
     "jest": "jest",
     "lint": "eslint --fix \"{src,test}/**/*.js\"",
-    "build": "webpack --env PROD --optimize-minimize",
-    "serve": "webpack-dev-server --env DEV",
+    "build": "webpack --env.production",
     "deploy": "firebase deploy"
   },
   "jest": {
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.2.10",
@@ -71,8 +72,8 @@
     "signals": "^1.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.8",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^1.16.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5",
     "whatwg-fetch": "^2.0.1"
   }
 }
