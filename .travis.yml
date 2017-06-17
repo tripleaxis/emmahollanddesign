@@ -1,12 +1,6 @@
 # node version specified via .nvmrc
 language: node_js
 
-# perform build tasks
-script:
-  - npm run lint
-  - npm test
-  - npm run build
-
 # speed up builds by caching node modules
 cache:
   directories:
@@ -15,3 +9,19 @@ cache:
 # turn off email notifications
 notifications:
   email: false
+
+before_script:
+  - npm prune
+
+# build tasks
+script:
+  - npm run lint
+  - npm test
+  - npm run build
+
+after_success:
+  - npm run corp-semantic-release
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
