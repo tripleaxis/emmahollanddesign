@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 function safeUrl(url) {
@@ -8,7 +9,7 @@ function safeUrl(url) {
 export default class Item extends Component {
   
   static propTypes = {
-    data: React.PropTypes.object.isRequired
+    data: PropTypes.object.isRequired
   };
   
   render() {

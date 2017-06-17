@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import store from '../../core/store';
 import { addItem } from '../../core/data/actions';
 import AdminItemList from './components/admin-item-list';
