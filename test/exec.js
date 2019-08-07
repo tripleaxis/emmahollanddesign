@@ -1,8 +1,10 @@
 const Jasmine = require('jasmine');
 const jasmine = new Jasmine();
 const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+const ignoreStyles = require('./ignore-styles');
 
 jasmine.loadConfigFile('test/jasmine.json');
+ignoreStyles();
 
 // setup exit codes for process on pass/fail
 jasmine.configureDefaultReporter({

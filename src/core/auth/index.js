@@ -13,7 +13,6 @@ auth.onAuthStateChanged((user) => {
 
 export function signInWithGoogle() {
   let provider = new GoogleAuthProvider();
-  provider.addScope('profile');
   provider.addScope('email');
   
   return auth.signInWithPopup(provider);
