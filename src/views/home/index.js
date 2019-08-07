@@ -6,17 +6,17 @@ import ItemList from '../items/itemList';
 import './Home.less';
 
 class Home extends Component {
-  
+
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.object).isRequired
   };
-  
+
   render() {
     let { items } = this.props;
-    
+
     return (
       <div className="Home">
-        <h1>Artwork</h1>
+        <h1>[Artwork]</h1>
         <ItemList items={items}/>
       </div>
     );
