@@ -86,8 +86,8 @@
     "json-loader": "^0.5.4",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
-    "lodash": "^4.17.3",
-    "moment": "^2.17.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "nyc": "^10.1.2",
     "postcss-loader": "^1.2.2",
     "prop-types": "^15.5.10",
@@ -103,7 +103,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5",
+    "webpack-dev-server": "^2.11.5",
     "whatwg-fetch": "^2.0.1"
   }
 }
