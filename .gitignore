@@ -19,3 +19,4 @@ npm-debug.log
 *.css
 .coverage
 *.map
+.next
