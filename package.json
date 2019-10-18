@@ -14,10 +14,13 @@
     "build": "next build"
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "husky": {
     "hooks": {
+      "pre-commit": "pretty-quick --staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -35,8 +38,10 @@
     "@commitlint/config-conventional": "^8.2.0",
     "@types/node": "^12.11.1",
     "@types/react": "^16.9.9",
-    "husky": "^0.13.4",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.0",
     "typescript": "^3.6.4"
   },
   "dependencies": {
